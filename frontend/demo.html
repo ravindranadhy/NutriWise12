@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - NutriWise360</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .page-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .demo-section {
+            padding: 80px 0;
+        }
+        .video-placeholder {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            background: #1e293b;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .video-placeholder .icon {
+            font-size: 120px;
+            margin-bottom: 24px;
+        }
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .demo-feature-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .demo-feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+        .demo-feature-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .demo-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="index.html#testimonials">Success Stories</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+                <button class="btn-primary" onclick="window.location.href='get-started.html'">Start Free Trial</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>See NutriWise360 in Action</h1>
+            <p>Watch how our AI-powered platform transforms nutrition tracking and personalization</p>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <section class="demo-section">
+        <div class="container">
+            
+            <!-- Video Placeholder -->
+            <div class="video-placeholder">
+                <div class="icon">🎬</div>
+                <h2 style="color: white; font-size: 32px; margin-bottom: 16px;">Demo Video Coming Soon!</h2>
+                <p style="color: #cbd5e1; font-size: 18px; max-width: 600px; line-height: 1.7;">
+                    We're creating an engaging demo video that showcases all the amazing features of NutriWise360. 
+                    In the meantime, explore our detailed feature pages to see everything we offer.
+                </p>
+                <button class="btn-primary btn-large" style="margin-top: 32px;" onclick="window.location.href='features.html'">
+                    Explore Features Instead →
+                </button>
+            </div>
+
+            <!-- What You'll See in the Demo -->
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 32px;">What the Demo Will Show</h2>
+            
+            <div class="demo-features">
+                <div class="demo-feature-card">
+                    <div style="font-size: 48px; margin-bottom: 16px;">📱</div>
+                    <h3>App Walkthrough</h3>
+                    <p>See the intuitive interface, easy navigation, and beautiful design that makes tracking enjoyable.</p>
+                </div>
+                
+                <div class="demo-feature-card">
+                    <div style="font-size: 48px; margin-bottom: 16px;">📸</div>
+                    <h3>Smart Food Logging</h3>
+                    <p>Watch how barcode scanning, photo recognition, and voice input make logging effortless in seconds.</p>
+                </div>
+                
+                <div class="demo-feature-card">
+                    <div style="font-size: 48px; margin-bottom: 16px;">🤖</div>
+                    <h3>AI Personalization</h3>
+                    <p>See how the AI adapts your meal plans based on your progress, activity, and preferences in real-time.</p>
+                </div>
+                
+                <div class="demo-feature-card">
+                    <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Explore the comprehensive dashboard showing your health metrics, trends, and insights over time.</p>
+                </div>
+                
+                <div class="demo-feature-card">
+                    <div style="font-size: 48px; margin-bottom: 16px;">🍛</div>
+                    <h3>Indian Meal Plans</h3>
+                    <p>Browse through authentic regional recipes with step-by-step instructions and nutritional breakdowns.</p>
+                </div>
+                
+                <div class="demo-feature-card">
+                    <div style="font-size: 48px; margin-bottom: 16px;">⌚</div>
+                    <h3>Device Integration</h3>
+                    <p>See how seamlessly we sync with your fitness trackers and health apps for automatic data collection.</p>
+                </div>
+            </div>
+
+            <!-- Interactive Preview -->
+            <div style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border-radius: 24px; padding: 48px; margin-top: 60px; text-align: center;">
+                <h2 style="font-size: 32px; margin-bottom: 24px;">Want to Experience It Yourself?</h2>
+                <p style="font-size: 18px; opacity: 0.95; max-width: 600px; margin: 0 auto 32px;">
+                    The best way to understand NutriWise360 is to try it. Start your free trial and experience personalized nutrition firsthand.
+                </p>
+                <button class="btn-primary btn-large" style="background: white; color: #16a34a;" onclick="window.location.href='get-started.html'">
+                    Start Your 14-Day Free Trial →
+                </button>
+                <p style="font-size: 14px; opacity: 0.9; margin-top: 16px;">✓ No credit card required  ✓ Cancel anytime  ✓ Full access</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+                    </div>
+                    <p>Personalized nutrition powered by AI and backed by science.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="science.html">Science</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NutriWise360. All rights reserved. HIPAA Compliant & Secure.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

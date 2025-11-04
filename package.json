@@ -1,0 +1,37 @@
+{
+  "name": "nutriwise360",
+  "version": "1.0.0",
+  "description": "NutriWise360 - Personalized Nutrition Tracking Application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && node server.js",
+    "dev": "cd backend && nodemon server.js",
+    "install-all": "cd backend && npm install",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "test": "echo \"No tests specified yet\"",
+    "deploy:vercel": "vercel --prod",
+    "deploy:heroku": "git push heroku main"
+  },
+  "keywords": [
+    "nutrition",
+    "health",
+    "fitness",
+    "tracking",
+    "mongodb",
+    "express",
+    "nodejs"
+  ],
+  "author": "NutriWise360 Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nutriwise360.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

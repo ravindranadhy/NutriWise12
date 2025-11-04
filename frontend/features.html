@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - NutriWise360</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .page-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: white;
+            text-decoration: underline;
+        }
+        .feature-detail-section {
+            padding: 80px 0;
+        }
+        .feature-box {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+        .feature-box:hover {
+            border-color: #16a34a;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+        .feature-title-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        .feature-icon-large {
+            font-size: 64px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(22, 163, 74, 0.1), rgba(34, 197, 94, 0.15));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .feature-title-row h2 {
+            font-size: 32px;
+            color: #0f172a;
+            margin: 0;
+        }
+        .feature-title-row .subtitle {
+            color: #64748b;
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        .problem-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+        }
+        .problem-box h3 {
+            color: #f59e0b;
+            margin-bottom: 12px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .problem-box p {
+            color: #78350f;
+            line-height: 1.7;
+        }
+        .solution-box {
+            background: #d1fae5;
+            border-left: 4px solid #16a34a;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 12px;
+        }
+        .solution-box h3 {
+            color: #16a34a;
+            margin-bottom: 12px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .solution-box p {
+            color: #064e3b;
+            line-height: 1.7;
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+        .benefits-list li {
+            padding: 14px 0 14px 36px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #334155;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .benefits-list strong {
+            color: #0f172a;
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .stat-card {
+            background: #f8fafc;
+            padding: 28px;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+        }
+        .stat-card .number {
+            font-size: 40px;
+            font-weight: 800;
+            color: #16a34a;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+        .stat-card .label {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        @media (max-width: 768px) {
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+            .feature-title-row {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="index.html#testimonials">Success Stories</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+                <button class="btn-primary" onclick="window.location.href='get-started.html'">Start Free Trial</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / Features</div>
+            <h1>360° Personalized Features</h1>
+            <p>Comprehensive solutions addressing every challenge in achieving sustainable, healthy nutrition outcomes</p>
+        </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+        <div class="container">
+            
+            <!-- Feature 1: Genetic Insights -->
+            <div class="feature-box">
+                <div class="feature-title-row">
+                    <div class="feature-icon-large">🧬</div>
+                    <div>
+                        <h2>Genetic Insights & DNA Analysis</h2>
+                        <div class="subtitle">Personalized nutrition based on your unique genetic makeup</div>
+                    </div>
+                </div>
+                
+                <div class="problem-box">
+                    <h3><span>❌</span> The Problem We Solve</h3>
+                    <p><strong>One-size-fits-all recommendations ignore biological diversity.</strong> Generic diet plans fail because they don't consider individual differences in genetics, metabolism, and nutrient absorption. What works for one person may be ineffective or even harmful for another. This is why 95% of diets fail long-term.</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3><span>✓</span> Our Solution</h3>
+                    <p><strong>DNA-based personalization that understands YOUR body.</strong> We analyze 100+ genetic markers related to metabolism, nutrient processing, food sensitivities, and weight management to create recommendations tailored to your unique biology—not generic advice.</p>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">Key Benefits:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Metabolic Optimization:</strong> Understand how your body processes carbs, fats, and proteins based on genetic variants like FTO, MC4R, and PPARG genes</li>
+                    <li><strong>Nutrient Absorption:</strong> Identify genetic predispositions affecting vitamin D, B12, folate, iron, and mineral absorption for targeted supplementation</li>
+                    <li><strong>Food Sensitivities:</strong> Discover genetic markers for lactose intolerance, gluten sensitivity, caffeine metabolism, and alcohol processing</li>
+                    <li><strong>Weight Management:</strong> Get insights into genes affecting appetite regulation, satiety signals, fat storage patterns, and exercise response</li>
+                    <li><strong>Disease Prevention:</strong> Understand genetic risks for type 2 diabetes, cardiovascular disease, and metabolic syndrome to prevent before symptoms appear</li>
+                </ul>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="number">2.5x</div>
+                        <div class="label">Better weight loss results with genetic personalization</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">100+</div>
+                        <div class="label">Genetic markers analyzed for comprehensive insights</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">89%</div>
+                        <div class="label">Users report better understanding of their body</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Microbiome Analysis -->
+            <div class="feature-box">
+                <div class="feature-title-row">
+                    <div class="feature-icon-large">🦠</div>
+                    <div>
+                        <h2>Microbiome Analysis & Gut Health</h2>
+                        <div class="subtitle">Personalized probiotics and foods based on your gut composition</div>
+                    </div>
+                </div>
+                
+                <div class="problem-box">
+                    <h3><span>❌</span> The Problem We Solve</h3>
+                    <p><strong>Poor gut health undermines all nutrition efforts.</strong> Your microbiome affects digestion, immunity, mood, weight, and even chronic disease risk. Generic probiotic recommendations don't address individual gut composition, leading to ineffective supplementation and persistent digestive issues that sabotage health goals.</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3><span>✓</span> Our Solution</h3>
+                    <p><strong>Microbiome-first approach with personalized gut optimization.</strong> We analyze your unique gut bacteria composition (over 1,000 species) and provide targeted recommendations for probiotics, prebiotics, and foods that support YOUR specific microbiome needs—not generic supplements.</p>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">What You Get:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Gut Composition Analysis:</strong> Detailed breakdown of beneficial bacteria (Lactobacillus, Bifidobacterium) vs harmful bacteria, diversity scores, and imbalance indicators</li>
+                    <li><strong>Personalized Probiotics:</strong> Specific strains (not generic blends) that address YOUR microbiome gaps—like L. rhamnosus for immunity or B. longum for stress</li>
+                    <li><strong>Prebiotic Foods:</strong> Dietary recommendations (Indian foods like bananas, garlic, onions, whole grains) to feed beneficial bacteria naturally</li>
+                    <li><strong>Digestive Health Tracking:</strong> Monitor improvements in bloating, gas, regularity, and overall comfort with weekly assessments</li>
+                    <li><strong>Immunity Boost:</strong> Optimize gut health for stronger immune function—70% of your immune system lives in your gut</li>
+                    <li><strong>Mood & Energy:</strong> Improve gut-brain axis for better mental clarity, reduced anxiety, and stable energy through serotonin production</li>
+                </ul>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="number">70%</div>
+                        <div class="label">Of immune system resides in gut microbiome</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">82%</div>
+                        <div class="label">Users report improved digestion within 6 weeks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">3-6mo</div>
+                        <div class="label">Typical microbiome transformation timeline</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Wearable Integration -->
+            <div class="feature-box">
+                <div class="feature-title-row">
+                    <div class="feature-icon-large">⌚</div>
+                    <div>
+                        <h2>Wearable & Sensor Integration</h2>
+                        <div class="subtitle">Real-time health data for adaptive nutrition plans</div>
+                    </div>
+                </div>
+                
+                <div class="problem-box">
+                    <h3><span>❌</span> The Problem We Solve</h3>
+                    <p><strong>Lack of integration makes it hard to see holistic progress.</strong> Most nutrition apps don't connect with fitness trackers and health devices, forcing manual tracking of everything. This creates incomplete data, missed optimization opportunities, and user frustration leading to 78% dropout rates.</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3><span>✓</span> Our Solution</h3>
+                    <p><strong>Seamless integration with 15+ health devices and apps.</strong> Automatically sync data from Fitbit, Apple Watch, Google Fit, glucose monitors, and smart scales. Your nutrition plan adapts in real-time based on activity, sleep quality, stress levels, and health metrics—no manual entry needed.</p>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">Connected Devices:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Fitness Trackers:</strong> Fitbit, Apple Watch, Garmin, Samsung Galaxy Watch, Xiaomi Mi Band—automatic step, calorie, and workout tracking</li>
+                    <li><strong>Health Apps:</strong> Apple Health, Google Fit, Samsung Health—centralized data from all your health apps</li>
+                    <li><strong>Glucose Monitors:</strong> Continuous glucose monitoring (CGM) devices like Freestyle Libre—track blood sugar responses to meals</li>
+                    <li><strong>Smart Scales:</strong> Withings, Fitbit Aria—body composition, weight trends, and BMI tracking</li>
+                    <li><strong>Sleep Trackers:</strong> Oura Ring, Fitbit, Apple Watch—sleep quality, REM cycles, and recovery monitoring</li>
+                    <li><strong>Heart Rate Monitors:</strong> Chest straps, wrist-based sensors—stress levels and cardiovascular health tracking</li>
+                </ul>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">Real-Time Adaptations:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Activity-Based Macros:</strong> Automatically adjust calories and macros after intense workouts—more carbs post-exercise, higher protein on strength days</li>
+                    <li><strong>Sleep Recovery:</strong> Modify nutrition when sleep quality is poor—more complex carbs for energy, magnesium-rich foods for better sleep</li>
+                    <li><strong>Stress Management:</strong> Adjust recommendations during high-stress periods—adaptogenic foods, reduced caffeine, calming nutrients</li>
+                    <li><strong>Blood Sugar Optimization:</strong> Fine-tune meals based on glucose responses—identify foods that spike your blood sugar and suggest alternatives</li>
+                </ul>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="number">15+</div>
+                        <div class="label">Device and app integrations supported</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">24/7</div>
+                        <div class="label">Real-time health monitoring and adaptation</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">92%</div>
+                        <div class="label">More accurate tracking vs manual logging</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4: Smart Food Logging -->
+            <div class="feature-box">
+                <div class="feature-title-row">
+                    <div class="feature-icon-large">📸</div>
+                    <div>
+                        <h2>Smart Food Logging</h2>
+                        <div class="subtitle">Effortless tracking with AI-powered recognition</div>
+                    </div>
+                </div>
+                
+                <div class="problem-box">
+                    <h3><span>❌</span> The Problem We Solve</h3>
+                    <p><strong>Manual food logging is tedious, limiting engagement.</strong> Traditional food tracking requires searching databases, estimating portions, and manual entry for every meal. This friction causes 78% of users to abandon diet apps within the first month—the #1 reason nutrition apps fail.</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3><span>✓</span> Our Solution</h3>
+                    <p><strong>Multiple effortless ways to log food in 10 seconds.</strong> Use barcode scanning, voice commands, photo recognition, or quick search. Our AI instantly identifies food and provides complete nutritional breakdown with 95% accuracy—making tracking actually enjoyable instead of a chore.</p>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">Smart Logging Methods:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Barcode Scanning:</strong> Instant database lookup with complete nutrition info for 500K+ packaged foods—just scan and done in 3 seconds</li>
+                    <li><strong>Photo Recognition:</strong> Snap a picture and AI identifies food items and estimates portions—works for Indian thalis, restaurant meals, home cooking</li>
+                    <li><strong>Voice Input:</strong> Just say what you ate—"I had masala dosa with sambar and coconut chutney for breakfast"—AI logs everything</li>
+                    <li><strong>Quick Search:</strong> Type-ahead search with Indian and international foods—finds "paneer tikka" faster than you can type it</li>
+                    <li><strong>Meal Templates:</strong> Save favorite meals (your mom's dal recipe, usual breakfast) for one-tap logging</li>
+                    <li><strong>Restaurant Menus:</strong> Pre-loaded nutrition data for 1000+ popular Indian restaurants and chains</li>
+                </ul>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">Why It Matters:</h3>
+                <ul class="benefits-list">
+                    <li><strong>5x Faster:</strong> Log meals in 10 seconds instead of 2 minutes—saves 15 minutes per day</li>
+                    <li><strong>Higher Adherence:</strong> Users who find logging easy stick with the app 3x longer—consistency is everything</li>
+                    <li><strong>Better Accuracy:</strong> AI portion estimation reduces logging errors by 40% compared to manual guessing</li>
+                    <li><strong>Cultural Foods:</strong> Extensive Indian food database with regional dishes—from idli to biryani, we know them all</li>
+                </ul>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="number">10sec</div>
+                        <div class="label">Average time to log a complete meal</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">500K+</div>
+                        <div class="label">Foods in our comprehensive database</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">95%</div>
+                        <div class="label">AI food recognition accuracy rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 5: Cultural Cuisine -->
+            <div class="feature-box">
+                <div class="feature-title-row">
+                    <div class="feature-icon-large">🍛</div>
+                    <div>
+                        <h2>India-Centric Cultural Cuisine</h2>
+                        <div class="subtitle">Personalized plans that respect your culture, taste, and budget</div>
+                    </div>
+                </div>
+                
+                <div class="problem-box">
+                    <h3><span>❌</span> The Problem We Solve</h3>
+                    <p><strong>Generic nutrition advice ignores cultural and regional diversity.</strong> Most diet apps are designed for Western diets, making recommendations impractical for Indian users. Suggestions like "quinoa salad" or "salmon" don't fit local availability, taste preferences, or budgets—leading to immediate abandonment.</p>
+                </div>
+
+                <div class="solution-box">
+                    <h3><span>✓</span> Our Solution</h3>
+                    <p><strong>India-first design with 28 regional cuisines.</strong> We understand Indian cuisine, cooking methods, and ingredient availability. Get meal plans with foods you actually eat and enjoy—from South Indian idli to North Indian roti, from Gujarati thali to Bengali fish curry. Affordable, accessible, and delicious.</p>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px; font-size: 22px;">Cultural Features:</h3>
+                <ul class="benefits-list">
+                    <li><strong>Regional Cuisines:</strong> 5000+ recipes from North, South, East, West India with authentic flavors and traditional cooking methods</li>
+                    <li><strong>Vegetarian Options:</strong> Extensive plant-based meal plans respecting Jain, Hindu, and personal dietary preferences</li>
+                    <li><strong>Festival Adaptations:</strong> Adjust plans during Diwali, Holi, Ramadan, Pongal, and other celebrations—enjoy without guilt</li>
+                    <li><strong>Local Ingredients:</strong> Recipes using easily available Indian ingredients from your local kirana store—no exotic imports needed</li>
+                    <li><strong>Budget-Friendly:</strong> Affordable meal options (₹50-200 per meal) for different income levels—healthy eating for everyone</li>
+                    <li><strong>Family Meals:</strong> Recipes that work for the whole family, not just you—one meal, everyone happy</li>
+                    <li><strong>Street Food Alternatives:</strong> Healthier versions of pani puri, vada pav, chaat, samosa—satisfy cravings smartly</li>
+                </ul>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="number">5000+</div>
+                        <div class="label">Authentic Indian recipes across regions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">28</div>
+                        <div class="label">Regional cuisines and cooking styles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">₹50-200</div>
+                        <div class="label">Average cost per healthy meal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 60px;">
+                <h2 style="margin-bottom: 20px;">Ready to Experience Personalized Nutrition?</h2>
+                <button class="btn-primary btn-large" onclick="window.location.href='get-started.html'">
+                    Start Your 14-Day Free Trial
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+                    </div>
+                    <p>Personalized nutrition powered by AI and backed by science.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="science.html">Science</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NutriWise360. All rights reserved. HIPAA Compliant & Secure.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

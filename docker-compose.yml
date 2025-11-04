@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: nutriwise-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: nutriwise360
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - nutriwise-network
+
+  # NutriWise360 Application
+  app:
+    build: .
+    container_name: nutriwise-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongodb:27017/nutriwise360
+      - SESSION_SECRET=your-super-secret-session-key-change-this
+    depends_on:
+      - mongodb
+    networks:
+      - nutriwise-network
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+      - /app/backend/node_modules
+
+networks:
+  nutriwise-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local

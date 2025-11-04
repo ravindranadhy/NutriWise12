@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriWise360 - Your Personalized Nutrition Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <style>
+        /* Onboarding Overlay */
+        .onboarding-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .onboarding-card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .onboarding-icon {
+            font-size: 80px;
+            margin-bottom: 24px;
+        }
+
+        .onboarding-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+
+        .onboarding-text {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .onboarding-progress {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .progress-dot.active {
+            background: #16a34a;
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .onboarding-btn {
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .onboarding-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
+        }
+
+        .skip-btn {
+            margin-top: 16px;
+            background: none;
+            color: #64748b;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+        }
+
+        /* Welcome Animation */
+        .welcome-animation {
+            animation: welcomeSlide 0.8s ease;
+        }
+
+        @keyframes welcomeSlide {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Pulse Animation for New Features */
+        .pulse-highlight {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(22, 163, 74, 0);
+            }
+        }
+
+        /* Tour Tooltip */
+        .tour-tooltip {
+            position: absolute;
+            background: #16a34a;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 9999;
+            pointer-events: none;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .tour-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #16a34a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Onboarding Overlay -->
+    <div class="onboarding-overlay" id="onboardingOverlay">
+        <div class="onboarding-card">
+            <div class="onboarding-icon" id="onboardingIcon">🎉</div>
+            <h2 class="onboarding-title" id="onboardingTitle">Welcome to NutriWise360!</h2>
+            <p class="onboarding-text" id="onboardingText">
+                You're about to experience personalized nutrition like never before. Let's take a quick tour of your dashboard.
+            </p>
+            <div class="onboarding-progress">
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            <button class="onboarding-btn" id="onboardingNext">Get Started →</button>
+            <button class="skip-btn" id="skipOnboarding">Skip Tour</button>
+        </div>
+    </div>
+
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#dashboard" class="logo">
+                    <span class="logo-icon">🌿</span>
+                    <span>NutriWise<span style="color: #16a34a">360</span></span>
+                </a>
+                <div class="location-selector" id="locationSelector">
+                    <span class="location-icon">📍</span>
+                    <div>
+                        <div class="location-label">Your location</div>
+                        <div class="location-text">Mumbai, India</div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="search-wrapper">
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-bar" id="searchBar" placeholder="Search foods, recipes, or ingredients...">
+                    </div>
+                    <button class="external-search-btn" id="barcodeBtn" title="Barcode Scanner">📷</button>
+                    <button class="external-search-btn" id="voiceBtn" title="Voice Search">🎤</button>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn" id="savedBtn" title="Saved Meals">💾<span class="badge">3</span></button>
+                <button class="icon-btn" id="notificationBtn" title="Notifications">🔔<span class="badge">5</span></button>
+                <button class="profile-btn" id="profileBtn">
+                    <div class="profile-avatar">RK</div>
+                    <span class="profile-name">Ravi Kumar</span>
+                </button>
+                
+                <!-- Profile Hover Card -->
+                <div class="profile-hover-card" id="profileHoverCard">
+                    <div class="profile-card-header">
+                        <div class="profile-card-avatar" id="profileCardAvatar">RK</div>
+                        <div class="profile-card-info">
+                            <h3 id="profileCardName">Ravi Kumar</h3>
+                            <p id="profileCardEmail">ravi@example.com</p>
+                        </div>
+                    </div>
+                    <div class="profile-card-divider"></div>
+                    <div class="profile-card-stats">
+                        <div class="profile-stat">
+                            <span class="stat-icon">🎂</span>
+                            <div class="stat-info">
+                                <span class="stat-label">Age</span>
+                                <span class="stat-value" id="profileCardAge">--</span>
+                            </div>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-icon">📏</span>
+                            <div class="stat-info">
+                                <span class="stat-label">Height</span>
+                                <span class="stat-value" id="profileCardHeight">--</span>
+                            </div>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-icon">⚖️</span>
+                            <div class="stat-info">
+                                <span class="stat-label">Weight</span>
+                                <span class="stat-value" id="profileCardWeight">--</span>
+                            </div>
+                        </div>
+                        <div class="profile-stat">
+                            <span class="stat-icon">🎯</span>
+                            <div class="stat-info">
+                                <span class="stat-label">Goal</span>
+                                <span class="stat-value" id="profileCardGoal">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner welcome-animation">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 id="welcomeMessage">Welcome to your dashboard! 👋</h1>
+                <p id="welcomeSubtext">Your personalized nutrition journey starts here. Track, learn, and achieve your health goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar" id="leftSidebar">
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#dashboard" class="nav-link active" data-section="dashboard"><span class="nav-icon">📊</span><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a href="#food-logging" class="nav-link" data-section="food-logging"><span class="nav-icon">📝</span><span>Food Logging</span></a></li>
+                    <li class="nav-item"><a href="#health-metrics" class="nav-link" data-section="health-metrics"><span class="nav-icon">💪</span><span>Health Metrics</span></a></li>
+                    <li class="nav-item"><a href="#progress-analytics" class="nav-link" data-section="progress-analytics"><span class="nav-icon">📈</span><span>Progress Analytics</span></a></li>
+                    <li class="nav-item"><a href="#wearables" class="nav-link" data-section="wearables"><span class="nav-icon">⌚</span><span>My Wearables</span></a></li>
+                    <li class="nav-item"><a href="#microbiome" class="nav-link" data-section="microbiome"><span class="nav-icon">🦠</span><span>Microbiome</span></a></li>
+                    <li class="nav-item"><a href="#settings" class="nav-link" data-section="settings"><span class="nav-icon">⚙️</span><span>Settings</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Today's Summary</h2>
+                    <a href="#" class="card-action">View Details →</a>
+                </div>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <div class="summary-icon">🔥</div>
+                        <div class="summary-value" id="caloriesConsumed">0</div>
+                        <div class="summary-label" id="caloriesLabel">of 2,000 kcal</div>
+                        <div class="summary-progress"><div class="summary-progress-bar" id="caloriesProgress" style="width: 0%"></div></div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🥩</div>
+                        <div class="summary-value" id="proteinConsumed">0g</div>
+                        <div class="summary-label" id="proteinLabel">of 120g protein</div>
+                        <div class="summary-progress"><div class="summary-progress-bar" id="proteinProgress" style="width: 0%"></div></div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">🍚</div>
+                        <div class="summary-value" id="carbsConsumed">0g</div>
+                        <div class="summary-label" id="carbsLabel">of 250g carbs</div>
+                        <div class="summary-progress"><div class="summary-progress-bar" id="carbsProgress" style="width: 0%"></div></div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-icon">💧</div>
+                        <div class="summary-value" id="waterConsumed">0</div>
+                        <div class="summary-label" id="waterLabel">of 8 glasses</div>
+                        <div class="summary-progress"><div class="summary-progress-bar" id="waterProgress" style="width: 0%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Recent Logs</h2>
+                    <a href="#" class="card-action">View All →</a>
+                </div>
+                <div class="log-list">
+                    <div class="log-item">
+                        <div class="log-info">
+                            <div class="log-icon">🌅</div>
+                            <div class="log-details"><h4>Breakfast</h4><p>Masala Dosa with Sambar • 8:30 AM</p></div>
+                        </div>
+                        <div class="log-calories"><div class="log-calories-value">450</div><div class="log-calories-label">kcal</div></div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-info">
+                            <div class="log-icon">☀️</div>
+                            <div class="log-details"><h4>Lunch</h4><p>Dal Tadka, Roti, Sabzi • 1:15 PM</p></div>
+                        </div>
+                        <div class="log-calories"><div class="log-calories-value">620</div><div class="log-calories-label">kcal</div></div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-info">
+                            <div class="log-icon">🍎</div>
+                            <div class="log-details"><h4>Snacks</h4><p>Mixed Nuts, Green Tea • 4:30 PM</p></div>
+                        </div>
+                        <div class="log-calories"><div class="log-calories-value">200</div><div class="log-calories-label">kcal</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Recommended for You</h2>
+                    <a href="#" class="card-action">See More →</a>
+                </div>
+                <div class="food-grid">
+                    <div class="food-card">
+                        <div class="food-image">🥗</div>
+                        <div class="food-name">Paneer Tikka Salad</div>
+                        <div class="food-calories">320 kcal</div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">🍲</div>
+                        <div class="food-name">Moong Dal Khichdi</div>
+                        <div class="food-calories">280 kcal</div>
+                    </div>
+                    <div class="food-card">
+                        <div class="food-image">🥤</div>
+                        <div class="food-name">Protein Smoothie</div>
+                        <div class="food-calories">220 kcal</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="widget">
+                <h3 class="widget-title">Quick Stats</h3>
+                <div class="stat-item"><span class="stat-label">Daily Goal Progress</span><span class="stat-value">73%</span></div>
+                <div class="stat-item"><span class="stat-label">Weekly Average</span><span class="stat-value">1,850 kcal</span></div>
+                <div class="stat-item"><span class="stat-label">Weight Progress</span><span class="stat-value">-2.3 kg</span></div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">Reminders</h3>
+                <div class="reminder-item">
+                    <input type="checkbox" class="reminder-checkbox" id="reminder1">
+                    <label for="reminder1" class="reminder-label">
+                        <div class="reminder-icon">💧</div>
+                        <div class="reminder-text">Drink water - 2 glasses left</div>
+                    </label>
+                </div>
+                <div class="reminder-item">
+                    <input type="checkbox" class="reminder-checkbox" id="reminder2">
+                    <label for="reminder2" class="reminder-label">
+                        <div class="reminder-icon">🍽️</div>
+                        <div class="reminder-text">Log dinner before 9 PM</div>
+                    </label>
+                </div>
+                <div class="reminder-item">
+                    <input type="checkbox" class="reminder-checkbox" id="reminder3">
+                    <label for="reminder3" class="reminder-label">
+                        <div class="reminder-icon">💊</div>
+                        <div class="reminder-text">Take vitamin D supplement</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">Connected Devices</h3>
+                <div class="device-item">
+                    <div class="device-info">
+                        <span class="device-icon">⌚</span>
+                        <span class="device-name">Fitbit</span>
+                    </div>
+                    <span class="device-status">✓</span>
+                </div>
+                <div class="device-item">
+                    <div class="device-info">
+                        <span class="device-icon">📱</span>
+                        <span class="device-name">Apple Health</span>
+                    </div>
+                    <span class="device-status">✓</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="sections.js?v=4"></script>
+    <script src="manual-search.js?v=4"></script>
+    <script src="progress-analytics.js?v=4"></script>
+    <script src="app-script.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+services:
+  # NutriWise360 Web Service
+  - type: web
+    name: nutriwise360
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: SESSION_MAX_AGE
+        value: 86400000
+    autoDeploy: true
+
+databases:
+  # Optional: MongoDB instance (if not using Atlas)
+  # Note: Render doesn't offer MongoDB, use MongoDB Atlas instead

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - NutriWise360</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .page-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .get-started-section {
+            padding: 80px 0;
+        }
+        .trial-info-box {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 24px;
+            padding: 48px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+        .trial-info-box h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+        .trial-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .trial-feature {
+            text-align: center;
+        }
+        .trial-feature .icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .trial-feature h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+        .trial-feature p {
+            font-size: 14px;
+            color: #64748b;
+        }
+        .coming-soon-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 2px solid #f59e0b;
+            border-radius: 24px;
+            padding: 48px;
+            text-align: center;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+        .coming-soon-box h3 {
+            font-size: 28px;
+            color: #78350f;
+            margin-bottom: 16px;
+        }
+        .coming-soon-box p {
+            font-size: 18px;
+            color: #92400e;
+            line-height: 1.7;
+        }
+        .notify-form {
+            max-width: 500px;
+            margin: 32px auto 0;
+            display: flex;
+            gap: 12px;
+        }
+        .notify-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+        .notify-form button {
+            padding: 14px 28px;
+            background: #f59e0b;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .notify-form button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .trial-features {
+                grid-template-columns: 1fr;
+            }
+            .notify-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="index.html#testimonials">Success Stories</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Start Your Health Transformation</h1>
+            <p>Join 50,000+ users achieving their health goals with AI-powered personalized nutrition</p>
+        </div>
+    </section>
+
+    <!-- Get Started Content -->
+    <section class="get-started-section">
+        <div class="container">
+            
+            <!-- Trial Info -->
+            <div class="trial-info-box">
+                <h2>14-Day Free Trial Includes:</h2>
+                <div class="trial-features">
+                    <div class="trial-feature">
+                        <div class="icon">🧬</div>
+                        <h4>Full Personalization</h4>
+                        <p>DNA & microbiome-based recommendations</p>
+                    </div>
+                    <div class="trial-feature">
+                        <div class="icon">📱</div>
+                        <h4>Smart Tracking</h4>
+                        <p>Barcode scan, voice, & photo logging</p>
+                    </div>
+                    <div class="trial-feature">
+                        <div class="icon">⌚</div>
+                        <h4>Device Sync</h4>
+                        <p>Connect all your wearables & apps</p>
+                    </div>
+                    <div class="trial-feature">
+                        <div class="icon">🍛</div>
+                        <h4>Indian Recipes</h4>
+                        <p>5000+ regional meal plans</p>
+                    </div>
+                    <div class="trial-feature">
+                        <div class="icon">🤖</div>
+                        <h4>AI Adaptation</h4>
+                        <p>Daily plan adjustments</p>
+                    </div>
+                    <div class="trial-feature">
+                        <div class="icon">👨‍⚕️</div>
+                        <h4>Expert Access</h4>
+                        <p>Chat with nutritionists</p>
+                    </div>
+                </div>
+                <div style="margin-top: 32px; padding-top: 32px; border-top: 2px solid #e2e8f0;">
+                    <p style="font-size: 18px; color: #16a34a; font-weight: 600; margin-bottom: 12px;">✓ No credit card required</p>
+                    <p style="font-size: 18px; color: #16a34a; font-weight: 600; margin-bottom: 12px;">✓ Cancel anytime, no questions asked</p>
+                    <p style="font-size: 18px; color: #16a34a; font-weight: 600;">✓ Full access to all premium features</p>
+                </div>
+            </div>
+
+            <!-- Try Demo -->
+            <div class="coming-soon-box">
+                <div style="font-size: 64px; margin-bottom: 20px;">🎉</div>
+                <h3>Experience the Dashboard Now!</h3>
+                <p>While we finalize the signup process, you can explore a fully functional demo of the NutriWise360 dashboard. See exactly how personalized nutrition tracking works!</p>
+                
+                <button onclick="window.location.href='dashboard.html'" style="padding: 16px 32px; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; margin-top: 24px; transition: all 0.3s;">
+                    Launch Dashboard Demo →
+                </button>
+                <p style="font-size: 14px; color: #92400e; margin-top: 16px;">✓ No signup required  ✓ Full features  ✓ Interactive tour</p>
+            </div>
+
+            <!-- What to Do Now -->
+            <div style="max-width: 800px; margin: 60px auto;">
+                <h2 style="text-align: center; margin-bottom: 32px; font-size: 32px;">What You Can Do Right Now</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                    <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px; text-align: center; cursor: pointer;" onclick="window.location.href='features.html'">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔍</div>
+                        <h4 style="margin-bottom: 12px; font-size: 20px;">Explore Features</h4>
+                        <p style="color: #64748b; font-size: 15px;">Learn about all our personalization capabilities</p>
+                    </div>
+                    
+                    <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px; text-align: center; cursor: pointer;" onclick="window.location.href='how-it-works.html'">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📖</div>
+                        <h4 style="margin-bottom: 12px; font-size: 20px;">See How It Works</h4>
+                        <p style="color: #64748b; font-size: 15px;">Understand the 3-step process to success</p>
+                    </div>
+                    
+                    <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px; text-align: center; cursor: pointer;" onclick="window.location.href='science.html'">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔬</div>
+                        <h4 style="margin-bottom: 12px; font-size: 20px;">Read the Science</h4>
+                        <p style="color: #64748b; font-size: 15px;">See the research backing our approach</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem Statement Reminder -->
+            <div style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border-radius: 24px; padding: 48px; margin-top: 60px;">
+                <h2 style="font-size: 32px; margin-bottom: 24px; text-align: center;">Why NutriWise360 Exists</h2>
+                
+                <div style="max-width: 700px; margin: 0 auto;">
+                    <p style="font-size: 18px; line-height: 1.8; opacity: 0.95; margin-bottom: 20px;">
+                        <strong>The Problem:</strong> Despite an explosion of health apps and diets, most people struggle to achieve sustainable, healthy outcomes. Generic nutrition advice fails to consider individual differences in genetics, lifestyle, microbiome, and culture.
+                    </p>
+                    
+                    <p style="font-size: 18px; line-height: 1.8; opacity: 0.95; margin-bottom: 20px;">
+                        <strong>The Result:</strong> High dropout rates, one-size-fits-all recommendations that ignore diversity, tedious manual food logging, lack of device integration, and privacy concerns.
+                    </p>
+                    
+                    <p style="font-size: 18px; line-height: 1.8; opacity: 0.95;">
+                        <strong>Our Solution:</strong> NutriWise360 integrates holistic health data (wearables, microbiome, genetics) for fully personalized and adaptive nutrition plans. We use machine learning to deliver smart, evolving recommendations based on YOUR real data—with privacy-first encryption and India-focused features.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+                    </div>
+                    <p>Personalized nutrition powered by AI and backed by science.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="science.html">Science</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NutriWise360. All rights reserved. HIPAA Compliant & Secure.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Notify form handler
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            alert('🎉 Thank you!\n\nWe\'ll notify ' + email + ' as soon as we launch.\n\nIn the meantime, explore our features and see how NutriWise360 can help you achieve your health goals!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

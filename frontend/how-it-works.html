@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - NutriWise360</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .page-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .page-hero p {
+            font-size: 20px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: white;
+            text-decoration: underline;
+        }
+        .process-section {
+            padding: 80px 0;
+        }
+        .step-box {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+        .step-number-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            font-size: 48px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
+        }
+        .step-content h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+        .step-content p {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        .step-details {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+        .step-details h4 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+        .step-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .step-details li {
+            padding: 10px 0 10px 28px;
+            position: relative;
+            color: #334155;
+        }
+        .step-details li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #16a34a;
+            font-weight: bold;
+        }
+        .timeline-connector {
+            width: 4px;
+            height: 60px;
+            background: linear-gradient(180deg, #16a34a, #22c55e);
+            margin: 0 auto;
+            opacity: 0.3;
+        }
+        @media (max-width: 768px) {
+            .step-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .step-number-circle {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="how-it-works.html">How It Works</a></li>
+                <li><a href="science.html">Science</a></li>
+                <li><a href="index.html#testimonials">Success Stories</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+                <button class="btn-primary" onclick="window.location.href='get-started.html'">Start Free Trial</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / How It Works</div>
+            <h1>Your Journey to Better Health</h1>
+            <p>From setup to sustainable results in three simple steps—no complexity, just results</p>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process-section">
+        <div class="container">
+            
+            <!-- Step 1 -->
+            <div class="step-box">
+                <div class="step-number-circle">01</div>
+                <div class="step-content">
+                    <h2>Create Your Comprehensive Health Profile</h2>
+                    <p>Tell us about yourself in just 5-7 minutes. We'll ask about your health goals, dietary preferences, allergies, lifestyle, and current challenges. This forms the foundation of your personalized plan.</p>
+                    
+                    <div class="step-details">
+                        <h4>What We'll Ask You:</h4>
+                        <ul>
+                            <li><strong>Health Goals:</strong> Weight loss, muscle gain, better energy, disease management, or general wellness</li>
+                            <li><strong>Current Metrics:</strong> Height, weight, age, activity level, and any existing health conditions</li>
+                            <li><strong>Food Preferences:</strong> Vegetarian, non-vegetarian, vegan, regional cuisine preferences (North/South Indian, etc.)</li>
+                            <li><strong>Restrictions & Allergies:</strong> Lactose intolerance, gluten sensitivity, nut allergies, religious dietary restrictions</li>
+                            <li><strong>Lifestyle Factors:</strong> Work schedule, stress levels, sleep patterns, exercise routine</li>
+                            <li><strong>Budget & Accessibility:</strong> Meal budget, cooking time available, access to ingredients</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-details" style="margin-top: 20px; background: #fff3cd; border-left: 4px solid #f59e0b;">
+                        <h4>💡 Pro Tip:</h4>
+                        <p style="margin: 0; color: #78350f;">Be honest and detailed! The more we know about you, the better we can personalize your plan. Don't worry—all data is encrypted and HIPAA-compliant.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-connector"></div>
+
+            <!-- Step 2 -->
+            <div class="step-box">
+                <div class="step-number-circle">02</div>
+                <div class="step-content">
+                    <h2>Connect Your Health Data Sources</h2>
+                    <p>Link your wearables, health apps, and optional lab results for comprehensive 360° personalization. The more data we have, the smarter your plan becomes.</p>
+                    
+                    <div class="step-details">
+                        <h4>What You Can Connect:</h4>
+                        <ul>
+                            <li><strong>Fitness Trackers:</strong> Fitbit, Apple Watch, Garmin, Samsung Galaxy Watch, Xiaomi Mi Band</li>
+                            <li><strong>Health Apps:</strong> Apple Health, Google Fit, Samsung Health—sync all your existing data</li>
+                            <li><strong>Smart Scales:</strong> Withings, Fitbit Aria—automatic weight and body composition tracking</li>
+                            <li><strong>Sleep Trackers:</strong> Oura Ring, Fitbit, Apple Watch—monitor sleep quality and recovery</li>
+                            <li><strong>Glucose Monitors (Optional):</strong> Continuous glucose monitoring devices for blood sugar optimization</li>
+                            <li><strong>Lab Results (Optional):</strong> Upload DNA test results (23andMe, AncestryDNA) or microbiome analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-details" style="margin-top: 20px;">
+                        <h4>Why Integration Matters:</h4>
+                        <ul>
+                            <li><strong>Real-Time Adaptation:</strong> Your plan adjusts automatically based on activity, sleep, and stress</li>
+                            <li><strong>No Manual Tracking:</strong> Steps, calories burned, and workouts sync automatically—no data entry</li>
+                            <li><strong>Holistic View:</strong> See how nutrition impacts sleep, energy, mood, and performance</li>
+                            <li><strong>Better Results:</strong> Users with connected devices see 2.3x better outcomes</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-details" style="margin-top: 20px; background: #d1fae5; border-left: 4px solid #16a34a;">
+                        <h4>✓ Optional But Powerful:</h4>
+                        <p style="margin: 0; color: #064e3b;">Don't have wearables? No problem! You can still get great results. But if you do connect devices, you'll unlock advanced features like activity-adjusted macros and sleep-based meal timing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-connector"></div>
+
+            <!-- Step 3 -->
+            <div class="step-box">
+                <div class="step-number-circle">03</div>
+                <div class="step-content">
+                    <h2>Get Your Personalized Plan & Start Tracking</h2>
+                    <p>Within minutes, receive your AI-generated meal plans, recipes, macro targets, and daily recommendations. Your plan evolves as you progress—it's never static.</p>
+                    
+                    <div class="step-details">
+                        <h4>What You'll Receive:</h4>
+                        <ul>
+                            <li><strong>Weekly Meal Plans:</strong> 7 days of breakfast, lunch, dinner, and snacks tailored to your preferences</li>
+                            <li><strong>Indian Recipes:</strong> Step-by-step cooking instructions with ingredients you can actually find</li>
+                            <li><strong>Daily Macro Targets:</strong> Personalized calories, protein, carbs, and fats based on YOUR body and goals</li>
+                            <li><strong>Shopping Lists:</strong> Organized grocery lists with everything you need for the week</li>
+                            <li><strong>Progress Dashboard:</strong> Visual tracking of weight, body composition, energy levels, and goal progress</li>
+                            <li><strong>AI Insights:</strong> Weekly reports showing what's working and what to adjust</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-details" style="margin-top: 20px;">
+                        <h4>How Your Plan Adapts:</h4>
+                        <ul>
+                            <li><strong>Daily Adjustments:</strong> Macros change based on yesterday's activity and today's schedule</li>
+                            <li><strong>Weekly Optimization:</strong> AI analyzes your progress and fine-tunes recommendations</li>
+                            <li><strong>Plateau Breaking:</strong> Automatic strategy shifts when progress stalls (calorie cycling, carb timing, etc.)</li>
+                            <li><strong>Preference Learning:</strong> The more you log, the better AI understands your taste preferences</li>
+                            <li><strong>Seasonal Adaptation:</strong> Meal plans adjust for festivals, holidays, and special occasions</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-details" style="margin-top: 20px;">
+                        <h4>Easy Food Logging:</h4>
+                        <ul>
+                            <li><strong>Barcode Scan:</strong> Instant logging for packaged foods—3 seconds per item</li>
+                            <li><strong>Photo Recognition:</strong> Snap a picture of your meal—AI identifies and logs it</li>
+                            <li><strong>Voice Input:</strong> Say what you ate—"I had aloo paratha with curd"—done!</li>
+                            <li><strong>Quick Search:</strong> Type-ahead search finds Indian foods instantly</li>
+                            <li><strong>Meal Templates:</strong> Save favorite meals for one-tap logging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Happens Next -->
+            <div style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border-radius: 24px; padding: 48px; margin-top: 60px; text-align: center;">
+                <h2 style="font-size: 36px; margin-bottom: 16px;">What Happens After You Start?</h2>
+                <p style="font-size: 18px; opacity: 0.95; max-width: 700px; margin: 0 auto 32px;">Your journey doesn't end at setup—it's just beginning. Here's what ongoing support looks like:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 32px;">
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 16px; padding: 24px;">
+                        <div style="font-size: 40px; margin-bottom: 12px;">📊</div>
+                        <h4 style="margin-bottom: 8px;">Weekly Check-ins</h4>
+                        <p style="font-size: 14px; opacity: 0.9;">AI analyzes your progress and provides insights on what's working</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 16px; padding: 24px;">
+                        <div style="font-size: 40px; margin-bottom: 12px;">🔔</div>
+                        <h4 style="margin-bottom: 8px;">Smart Reminders</h4>
+                        <p style="font-size: 14px; opacity: 0.9;">Gentle nudges to log meals, drink water, and stay on track</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 16px; padding: 24px;">
+                        <div style="font-size: 40px; margin-bottom: 12px;">👨‍⚕️</div>
+                        <h4 style="margin-bottom: 8px;">Expert Access</h4>
+                        <p style="font-size: 14px; opacity: 0.9;">Connect with certified nutritionists when you need guidance</p>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 16px; padding: 24px;">
+                        <div style="font-size: 40px; margin-bottom: 12px;">🎯</div>
+                        <h4 style="margin-bottom: 8px;">Goal Milestones</h4>
+                        <p style="font-size: 14px; opacity: 0.9;">Celebrate achievements and unlock new features as you progress</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 60px;">
+                <h2 style="margin-bottom: 20px; font-size: 36px;">Ready to Start Your Journey?</h2>
+                <p style="color: #64748b; margin-bottom: 32px; font-size: 18px;">Join 50,000+ users transforming their health with personalized nutrition</p>
+                <button class="btn-primary btn-large" onclick="window.location.href='get-started.html'">
+                    Start Your 14-Day Free Trial
+                    <span class="arrow">→</span>
+                </button>
+                <p style="color: #64748b; margin-top: 16px; font-size: 14px;">✓ No credit card required  ✓ Cancel anytime  ✓ Full access to all features</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🌿</span>
+                        <span class="logo-text">NutriWise<span class="highlight">360</span></span>
+                    </div>
+                    <p>Personalized nutrition powered by AI and backed by science.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="features.html">Features</a>
+                    <a href="how-it-works.html">How It Works</a>
+                    <a href="science.html">Science</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NutriWise360. All rights reserved. HIPAA Compliant & Secure.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
