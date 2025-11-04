@@ -7,9 +7,11 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/nutriwise360';
+const SESSION_SECRET = process.env.SESSION_SECRET || 'nutriwise360-secret-key-change-in-production';
 
 // MongoDB Connection
-mongoose.connect('mongodb://localhost:27017/nutriwise360', {
+mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -117,17 +119,17 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Session configuration - Persistent login for 30 days
 app.use(session({
-    secret: 'nutriwise360-secret-key-change-in-production',
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost:27017/nutriwise360',
+        mongoUrl: MONGODB_URI,
         ttl: 30 * 24 * 60 * 60 // 30 days
     }),
     cookie: {
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
         httpOnly: true,
-        secure: false, // Set to true in production with HTTPS
+        secure: process.env.NODE_ENV === 'production', // true in production with HTTPS
         sameSite: 'lax'
     }
 }));
@@ -549,5 +551,6 @@ app.get('/dashboard', requireAuth, (req, res) => {
 // Start server
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
-    console.log(`📊 MongoDB connected to localhost:27017/nutriwise360`);
+    console.log(`📊 MongoDB connected to ${MONGODB_URI}`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
